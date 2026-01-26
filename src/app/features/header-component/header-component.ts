@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Button } from "../../shared-ui/button/button";
+import { ButtonComponent } from "../../shared-ui/button/button";
 
 @Component({
   selector: 'app-header-component',
-  imports: [Button],
+  imports: [ButtonComponent],
   templateUrl: './header-component.html',
   styleUrl: './header-component.css',
 })
