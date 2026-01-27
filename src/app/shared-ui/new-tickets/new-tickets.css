@@ -2,3 +2,7 @@ p {
     display: flex;
     flex-direction: column;
 }
+
+#new-ticket {
+  width: 15rem;
+}
