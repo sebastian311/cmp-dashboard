@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent } from '../button/button';
 import { ControlComponent } from "../control/control";
 
@@ -7,6 +7,7 @@ import { ControlComponent } from "../control/control";
   imports: [ButtonComponent, ControlComponent],
   templateUrl: './new-tickets.html',
   styleUrl: './new-tickets.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class NewTickets {
 
