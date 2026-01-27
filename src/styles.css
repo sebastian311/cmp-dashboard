@@ -95,6 +95,10 @@ p {
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
   color: #4f4b53;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
 }
 
 #chart {
