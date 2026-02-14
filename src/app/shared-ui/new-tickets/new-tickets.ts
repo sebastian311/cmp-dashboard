@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewEncapsulation, inject } from '@angular/core';
 import { ButtonComponent } from '../button/button';
 import { ControlComponent } from "../control/control";
 
@@ -10,5 +10,9 @@ import { ControlComponent } from "../control/control";
   encapsulation: ViewEncapsulation.None
 })
 export class NewTickets {
-
+  private el = inject(ElementRef);
+  
+  @HostListener('click') onClick() {
+    console.log('New Tickets Component Form clicked');
+  }
 }
