@@ -16,7 +16,7 @@ export class ServerStatusComponent implements OnInit, OnDestroy {
     // console.log('ServerStatus component initialized');
     this.interval = setInterval(() => {
       const randomValue = Math.random();
-      console.log('Random value:', randomValue);
+      // console.log('Random value:', randomValue);
       
       if (randomValue < 0.5) {
         this.currentStatus = 'online';
