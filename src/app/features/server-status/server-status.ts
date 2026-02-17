@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, signal, effect } from '@angular/core';
 
 @Component({
   selector: 'app-server-status',
@@ -7,10 +7,14 @@ import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
   styleUrl: './server-status.css',
 })
 export class ServerStatusComponent implements OnInit, OnDestroy {
-  currentStatus: 'online' | 'offline' | 'unknown' = 'online';
+  currentStatus = signal<'online' | 'offline' | 'unknown'>('online');
   private interval: any;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) {
+    effect(() => {
+      console.log("Current server status:", this.currentStatus());
+    });
+  }
 
   ngOnInit() {
     // console.log('ServerStatus component initialized');
@@ -19,11 +23,11 @@ export class ServerStatusComponent implements OnInit, OnDestroy {
       // console.log('Random value:', randomValue);
       
       if (randomValue < 0.5) {
-        this.currentStatus = 'online';
+        this.currentStatus.set('online');
       } else if (randomValue < 0.9) {
-        this.currentStatus = 'offline';
+        this.currentStatus.set('offline');
       } else {
-        this.currentStatus = 'unknown';
+        this.currentStatus.set('unknown');
       }
       
       // console.log('Status updated to:', this.currentStatus);
