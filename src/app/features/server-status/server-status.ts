@@ -13,7 +13,7 @@ export class ServerStatusComponent implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    console.log('ServerStatus component initialized');
+    // console.log('ServerStatus component initialized');
     this.interval = setInterval(() => {
       const randomValue = Math.random();
       console.log('Random value:', randomValue);
@@ -26,7 +26,7 @@ export class ServerStatusComponent implements OnInit, OnDestroy {
         this.currentStatus = 'unknown';
       }
       
-      console.log('Status updated to:', this.currentStatus);
+      // console.log('Status updated to:', this.currentStatus);
       this.cdr.detectChanges();
     }, 2000);
   }
