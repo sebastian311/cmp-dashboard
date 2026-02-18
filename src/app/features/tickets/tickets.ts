@@ -10,4 +10,16 @@ import { Ticket } from '../../data-access/models/ticket.model';
 })
 export class TicketsComponent {
   tickets: Ticket[] = [];
+
+  onAddTicket(event: {title: string, text: string}) {
+    const newTicket: Ticket = {
+      id: this.tickets.length + 1,
+      title: event.title,
+      requestText: event.text,
+      status: 'open'
+    };
+    
+    this.tickets.push(newTicket);
+    console.log('New ticket added:', newTicket);
+  }
 }

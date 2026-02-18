@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild, ViewEncapsulation, inject, viewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewEncapsulation, viewChild, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button';
 import { ControlComponent } from "../control/control";
@@ -13,14 +13,17 @@ import { ControlComponent } from "../control/control";
 export class NewTickets {
   // @ViewChild('form') form!: ElementRef<HTMLFormElement>;
   private form = viewChild<ElementRef<HTMLFormElement>>('form');
+  add = output<{title: string, text: string}>();
   
   @HostListener('click') onClick() {
     console.log('New Tickets Component Form clicked');
   }
 
   onSubmit(name: HTMLInputElement, request: HTMLTextAreaElement) {
-    console.log('Form submitted with name:', name.value);
-    console.log('Form submitted with request:', request.value);
+    this.add.emit({
+      title: name.value,
+      text: request.value
+    })
     this.form()?.nativeElement.reset();
   }
 }

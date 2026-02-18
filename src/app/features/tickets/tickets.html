@@ -1,3 +1,17 @@
+<div>
+    <ul>
+        @for (ticket of tickets; track ticket.id) {
+            <li>
+                <h3>{{ ticket.title }}</h3>
+                <p>{{ ticket.requestText }}</p>
+                <p>Status: {{ ticket.status }}</p>
+            </li>
+        } @empty {
+            <p>No tickets available.</p>
+        }
+    </ul>
+</div>
+
 <div id="status">
-    <app-new-tickets />
+    <app-new-tickets (add)="onAddTicket($event)" />
 </div>
