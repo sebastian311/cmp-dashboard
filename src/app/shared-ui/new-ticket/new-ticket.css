@@ -59,6 +59,10 @@
     padding: 1rem;
     font-size: 0.9rem;
   }
+
+  .lineBreak {
+    line-break: anywhere;
+  }
   
   p:has(button) {
     padding-top: 0;

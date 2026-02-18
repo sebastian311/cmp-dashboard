@@ -23,4 +23,14 @@ export class TicketsComponent {
     this.tickets.push(newTicket);
     console.log('New ticket added:', newTicket);
   }
+
+  onCloseTicket(ticketId: number) {
+    this.tickets = this.tickets.map(ticket => {
+      if (ticket.id === ticketId) {
+        return { ...ticket, status: 'closed' };
+      }
+      return ticket;
+    });
+    console.log('Ticket closed:', ticketId);
+  }
 }
