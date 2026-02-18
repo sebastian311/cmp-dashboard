@@ -1,5 +1,5 @@
 <div>
-    <ul>
+    <ul style="padding: 0 !important">
         @for (ticket of tickets; track ticket.id) {
             <app-ticket-component [data]="ticket" />
         } @empty {

@@ -9,6 +9,7 @@ import { DashboardItemComponent } from './shared-ui/dashboard-item/dashboard-ite
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   imports: [
     HeaderComponent,
     ServerStatusComponent,

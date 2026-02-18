@@ -1,0 +1,26 @@
+.status-wrapper {
+  width: 16rem;
+  min-width: 16rem;
+  max-width: 16rem;
+}
+
+.traffic-wrapper {
+  width: 22rem;
+  min-width: 22rem;
+  max-width: 22rem;
+}
+
+.tickets-wrapper {
+  width: 40rem;
+  max-width: 40rem;
+  padding: 0 !important;
+}
+
+:host {
+  #dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

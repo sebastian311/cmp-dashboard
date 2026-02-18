@@ -1,4 +1,5 @@
 .dashboard-item {
+  width: inherit;
   display: block;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -26,10 +27,4 @@ h2 {
   font-size: 0.9rem;
   text-transform: uppercase;
   color: #504e50;
-}
-
-@media (min-width: 768px) {
-  .dashboard-item {
-    padding: 2rem;
-  }
 }
