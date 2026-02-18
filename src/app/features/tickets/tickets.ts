@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NewTickets } from "../../shared-ui/new-tickets/new-tickets";
 import { Ticket } from '../../data-access/models/ticket.model';
+import { NewTicketComponent } from "../../shared-ui/new-ticket/new-ticket";
 
 @Component({
   selector: 'app-tickets',
-  imports: [NewTickets],
+  imports: [NewTickets, NewTicketComponent],
   templateUrl: './tickets.html',
   styleUrl: './tickets.css',
 })
@@ -18,7 +19,7 @@ export class TicketsComponent {
       requestText: event.text,
       status: 'open'
     };
-    
+
     this.tickets.push(newTicket);
     console.log('New ticket added:', newTicket);
   }
